@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-	e.preventDefault();
-  }
+    e.preventDefault();
+  };
 
   return (
     <div className="login-wrapper">
@@ -20,7 +22,7 @@ const Login = () => {
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-			className="login-input-form"
+            className="login-input-form"
           />
           <br />
           <label className="login-label">Name:</label>
@@ -29,14 +31,12 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-			className="login-input-form"
+            className="login-input-form"
           />
           <br />
-		  <input 
-          type='submit' 
-          value='Sign In' 
-		  className="signin-button"
-        />
+          <Link to="/user/123">
+            <input type="submit" value="Sign In" className="signin-button" />
+          </Link>
         </form>
       </div>
     </div>
