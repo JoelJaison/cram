@@ -1,8 +1,11 @@
 import oski from "./oski.jpeg";
 import "./UserPage.css";
 import plus from "./plus.png";
+import { Link } from "react-router-dom";
 const UserPage = () => {
   const sessionNames = ["first", "second", "third", "fourth"];
+
+  
 
   return (
     <div className="user-wrapper">
@@ -23,7 +26,9 @@ const UserPage = () => {
         <div className="user-search">
 			<input className="user-input" placeholder="Search..." />
 		</div>
+    <Link to="/chat/123/123/">
         <button className="user-start-button">Start ChatBot</button>
+    </Link>
         <div className="user-document-section">documents!</div>
         <img src={plus} />
       </div>
