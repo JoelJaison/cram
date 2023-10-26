@@ -15,6 +15,7 @@ export const ChatBot = () => {
 
   const defaultMessage = "Welcome! What can I help you study with today?"
   const [messages, setMessages] = useState([{"author": "chatbot", "content": defaultMessage}])
+  // testing
   return (
     <div className="chat-bot">
       <div className="messages">
