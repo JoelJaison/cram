@@ -37,6 +37,16 @@
   background-color: #ffb703;
 }
 
+.add-image {
+  width: 7%;
+  float: right;
+  padding-right: 5%;
+}
+.add-wrapper {
+  width: 100%;
+}
+
+
 .user-main-section {
   width: 85%;
   display: flex;
@@ -50,4 +60,35 @@
 
 .user-search input {
 	width: 100%;
+}
+
+.session-form {
+  height: 25vh;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+}
+
+.session-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.file-img {
+  width: 20%;
+}
+
+.user-document-section {
+  display: flex;
+  height: 100vh;
+}
+
+.chat-link {
+  padding-top: 3%;
+}
+.user-start-button {
+  background-color: #FFB703;
+  width: 100%;
+  padding-top: 5%;
 }
