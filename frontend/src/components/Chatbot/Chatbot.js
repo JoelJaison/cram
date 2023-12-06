@@ -3,11 +3,20 @@ import React, { useState } from "react";
 
 export const ChatBot = () => {
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     console.log(currMessage);
     let tmp = {"author": "user", "content": currMessage};
-    setMessages([...messages, tmp]);
+    const response = await fetch('http://localhost:5000/get_response', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userInput: currMessage }),
+      });
+    const data = await response.json();
+    let newTmp = {"author": "user", "content": data.result};
+    setMessages([...messages, tmp, newTmp]);
     setCurrMessage("");
   }
 
@@ -22,7 +31,8 @@ export const ChatBot = () => {
           let content = message["content"];
           return (
             <div className="chatbot-message-outer">
-              <div className={`chatbot-message-inner ${message["author"] == "user" ? "user-class" : "chatbot-class"}`}>
+              <div className={`chatbot-message-inner`}> 
+              
                 <p>{content}</p>
               </div>
             </div>
@@ -37,16 +47,5 @@ export const ChatBot = () => {
     </div>
   )
       }
-      /*{ <div className="div">
-        <div className="overlap">
-          <div className="rectangle" />
-          <div className="text-wrapper">Enter Your Question/upload files...</div>
-        </div>
-        <div className="overlap-group">
-          <div className="text-wrapper-2">ChatBot</div>
-          <p className="p">Welcome! What can I help you study with today?</p>
-        </div>
-      </div>
-    </div> */
 
 export default ChatBot;

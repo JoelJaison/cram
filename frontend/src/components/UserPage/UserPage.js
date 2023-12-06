@@ -56,17 +56,6 @@ const UserPage = () => {
         return tmp;
       });
 
-      // You can use fetch or axios to send the file to the server
-      // For example, using fetch:
-      // fetch('your-upload-endpoint', {
-      //   method: 'POST',
-      //   body: formData,
-      // })
-      //   .then(response => response.json())
-      //   .then(data => console.log(data))
-      //   .catch(error => console.error(error));
-
-      // Reset the file state after submission
       setCurrFile(null);
     }
     setDisplayFileUpload(false);
